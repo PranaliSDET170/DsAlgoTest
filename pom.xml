@@ -6,19 +6,35 @@
 	<artifactId>DsAlgoTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-
-	<!-- Added selenium and TestNg dependencies-->
+	<!-- Added selenium and Cucumber dependencies-->
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>4.22.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.10.2</version>
-			<scope>test</scope>
-		</dependency>
+		
+	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.18.1</version>
+    </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+   <dependency>
+       <groupId>io.cucumber</groupId>
+       <artifactId>cucumber-testng</artifactId>
+       <version>7.18.1</version>
+   </dependency>
+
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+   <dependency>
+       <groupId>io.cucumber</groupId>
+       <artifactId>cucumber-junit</artifactId>
+       <version>7.18.1</version>
+       <scope>test</scope>
+   </dependency>
+
 	</dependencies>
 </project>
