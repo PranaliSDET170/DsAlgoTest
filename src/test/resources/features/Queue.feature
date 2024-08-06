@@ -1,26 +1,31 @@
-@tag
+@Queue
 Feature: Title of your feature
-  I want to use this template for my feature file
 
-  @tag1
-  Scenario: Title of your scenario
-    Given I want to write a step with precondition
-    And some other precondition
-    When I complete action
-    And some other action
-    And yet another action
-    Then I validate the outcomes
-    And check more outcomes
-
-  @tag2
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
-
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
-      | name3 |     7 | Fail    |
-      
+	@QueueModule	
+  Scenario: Queue module
+    Given The user is in the Home page after logged in
+    When The user clicks the Get Started button in Queue Panel
+    Then The user should be directed to Queue Page
+    
+  @ImplQueueInPython
+  Scenario: Queue module - Implementation of Queue in Python
+    Given The user is in the Queue page after logged in
+    When The user clicks Implementation of Queue in Python button
+    Then The user should be directed to Implementation of Queue in Python Page
+    Given The user is in the Implementation of Queue in Python page
+    When The user clicks Try Here button
+    Then The user should be redirected to a page having an tryEditor with a Run button to test
+    Given The user is on the tryEditor page
+    When The User writes Valid python code
+    And click Run button
+    Then User is able to see the output in console
+    Given The user is on the tryEditor page
+    When The user writes invalid python code
+    And click Run button
+    Then User is able to see the error msg in pop up window
+    Given The user is on the editor page with Alert  error message	
+    When The user click the ok button in the alert window		
+    Then The user is on the same page having Editor and Run button																				
+    Given The user is on the tryEditor page	
+    When The user clicks browser back button		
+    Then The user should be directed to Implementation of Queue in Python Page																					

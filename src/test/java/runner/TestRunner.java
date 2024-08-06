@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 	@CucumberOptions(
 			plugin = {"pretty", "html:target/TestRusult.html"}, //reporting purpose
 			monochrome=true,  //console output colour
-			tags = "@tag", //tags from feature file
+			tags = "@Queue", //tags from feature file
 			features = {"src/test/resources/features/Queue.feature"}, //location of feature files
 			glue= "stepdefination") //location of step definition files
 
