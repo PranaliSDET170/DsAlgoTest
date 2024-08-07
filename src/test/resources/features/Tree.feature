@@ -5,7 +5,7 @@ Feature: This feature file contain scenario for the tree module
     Given user is on login page
     When user enters username and password
     And cicks on login button
-    Then user is navigated to homepage
+    Then user is successfully logged in
 
   @Tree
   Scenario: verify tree module homepage
