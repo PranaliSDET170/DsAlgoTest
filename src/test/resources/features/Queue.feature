@@ -1,4 +1,4 @@
-@Queue
+@Queue 
 Feature: This feature file contain scenario for the Queue module
 
   Background: user is logged in
@@ -8,7 +8,7 @@ Feature: This feature file contain scenario for the Queue module
     Then user is navigated to homepage
 
   @Queue
-  Scenario: verify Queue module homepage
+  Scenario: verify queue module homepage
     Given user is on homepage
-    When user clicks on get started button
-    Then user is navigated to Queue homepage
+    When user clicks on get started button in queue module
+    Then user is navigated to queue homepage

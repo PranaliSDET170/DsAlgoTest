@@ -14,13 +14,12 @@ public class QueueSteps {
 	    
 	}
 
-	@When("user clicks on get started button")
-	public void user_clicks_on_get_started_button() {
-	   
+	@When("user clicks on get started button in queue module")
+	public void user_clicks_on_get_started_button_in_queue_module() {
 	    
 	}
 
-	@Then("user is navigated to Queue homepage")
+	@Then("user is navigated to queue homepage")
 	public void user_is_navigated_to_queue_homepage() {
 	    
 	}
