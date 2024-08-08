@@ -27,8 +27,8 @@ public class LoginSteps {
 
 		driver.get("https://dsportalapp.herokuapp.com/login");
 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 
 	}
 
@@ -45,10 +45,17 @@ public class LoginSteps {
 		driver.findElement(By.xpath("//input[4]")).click();
 
 	}
-
+	
 	@Then("user is successfully logged in")
 	public void user_is_successfully_logged_in() {
-		Assert.assertEquals("You are logged in", driver.findElement(By.className("alert")).getText());
+		Assert.assertEquals(driver.findElement(By.className("alert")).getText(), "You are logged in");
+	}
+	
+	@Given("user is on homepage")
+	public void user_is_on_homepage() {
+		//Assert.assertEquals(<ActualValueReturnedByDriver>, <ExpectedValue>);
+		Assert.assertEquals(driver.getTitle(), "NumpyNinja");
+
 	}
 
 }
