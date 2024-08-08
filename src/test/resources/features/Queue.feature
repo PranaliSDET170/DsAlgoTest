@@ -28,5 +28,5 @@ Feature: This feature file contain scenario for the Queue module
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
-    #Then user is able to see the output in the console
-    
+    Then user is able to see the output in the console
+    And close browser

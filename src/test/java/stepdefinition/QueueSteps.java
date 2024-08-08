@@ -1,6 +1,7 @@
 package stepdefinition;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -54,6 +55,9 @@ public class QueueSteps {
 
 	@When("user writes valid python code")
 	public void user_writes_valid_python_code() {
+		String script = "var editor = document.querySelector('.CodeMirror').CodeMirror; editor.setValue(arguments[0]);";
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript(script, "print \"Hello\"");
 
 	}
 
@@ -65,7 +69,11 @@ public class QueueSteps {
 	@Then("user is able to see the output in the console")
 	public void user_is_able_to_see_the_output_in_the_console() {
 		Assert.assertEquals(driver.findElement(By.id("output")).getText(), "Hello");
-
 	}
-
+	
+	@Then("close browser")
+	public void close_browser() {
+		driver.close();
+	}
+	
 }
