@@ -1,4 +1,4 @@
-@Queue
+@Queue @Smoke
 Feature: This feature file contain scenario for the Queue module
 
   Background: user is logged in
