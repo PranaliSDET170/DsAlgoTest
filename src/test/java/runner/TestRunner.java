@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 	@CucumberOptions(
 			plugin = {"pretty", "html:target/TestRusult.html"}, //to generate reports
 			monochrome=true,  //console output colour
-			tags = "@Queue or @Tree", //tags from feature file
+			tags = "@ImplCollDeque", //tags from feature file
 			features = {"src/test/resources/features"}, //location of feature files
 			glue= "stepdefinition") //location of step definition files
 

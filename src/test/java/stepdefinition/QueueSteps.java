@@ -70,11 +70,17 @@ public class QueueSteps {
 	public void user_is_able_to_see_the_output_in_the_console() {
 		Assert.assertEquals(driver.findElement(By.id("output")).getText(), "Hello");
 	}
-	
-	@Then("close browser")
-	public void close_browser() throws Exception{
-		Thread.sleep(5000);
-		driver.close();
+
+	@When("user clicks on Implementation using collections.deque link")
+	public void user_clicks_on_implementation_using_collections_deque_link() {
+		driver.findElement(By.linkText("Implementation using collections.deque")).click();
+
 	}
-	
+
+	@Then("user is navigated to Implementation using collections.deque homepage")
+	public void user_is_navigated_to_implementation_using_collections_deque_homepage() {
+		Assert.assertEquals(driver.getTitle(), "Implementation using collections.deque");
+
+	}
+
 }
