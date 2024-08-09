@@ -72,7 +72,8 @@ public class QueueSteps {
 	}
 	
 	@Then("close browser")
-	public void close_browser() {
+	public void close_browser() throws Exception{
+		Thread.sleep(5000);
 		driver.close();
 	}
 	
