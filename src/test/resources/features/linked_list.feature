@@ -1,5 +1,5 @@
 
-Feature: This feature file contain scenario for the Queue module
+Feature: This feature file contain scenario for the Linked List module
 
   Background: user is logged in
     Given user is on login page

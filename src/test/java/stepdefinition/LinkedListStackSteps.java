@@ -14,15 +14,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import java.time.Duration;
 
-public class LinkedListSteps{
+public class LinkedListStackSteps{
 	
 	WebDriver driver = LoginSteps.getDriver();
 
 	@When("User clicks the Get Started button in Linked List Panel")
 	public void user_clicks_the_get_started_button_in_linked_list_panel() {
 		driver.findElement(By.xpath("//a[@href='linked-list']")).click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 	}
 
 	@Then("The user should be redirected to {string} page")
@@ -74,6 +72,11 @@ public class LinkedListSteps{
 		Alert alert = driver.switchTo().alert();
 		String alertText = alert.getText();
 		System.out.println("Alert detected with text: " + alertText);
+	}
+	
+	@When("User clicks the Get Started button in Stack Panel")
+	public void user_clicks_the_get_started_button_in_stack_panel() {
+		driver.findElement(By.xpath("//a[@href='stack']")).click();
 	}
 	
 }
