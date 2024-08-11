@@ -34,7 +34,7 @@ Feature: This feature file contain scenario for the Queue module
   Scenario: Verify linkedlist TypesofLinkedList module
     Given user is on homepage
     When User clicks the Get Started button in Linked List Panel
-    Then The user Click run buttonshould be redirected to "Linked List" page
+    Then The user should be redirected to "Linked List" page
     When The user clicks "Types of Linked List" link
     Then The user should be redirected to "Types of Linked List" page
     When The user clicks "Try here>>>" button
@@ -46,7 +46,7 @@ Feature: This feature file contain scenario for the Queue module
   Scenario: Verify linkedlist ImplementLinkedList module
     Given user is on homepage
     When User clicks the Get Started button in Linked List Panel
-    Then The user Click run buttonshould be redirected to "Linked List" page
+    Then The user should be redirected to "Linked List" page
     When The user clicks "Implement Linked List in Python" link
     Then The user should be redirected to "Implement Linked List in Python" page
     When The user clicks "Try here>>>" button
@@ -58,7 +58,7 @@ Feature: This feature file contain scenario for the Queue module
    Scenario: Verify linkedlist Traversal module
     Given user is on homepage
     When User clicks the Get Started button in Linked List Panel
-    Then The user Click run buttonshould be redirected to "Linked List" page
+    Then The user should be redirected to "Linked List" page
     When The user clicks "Traversal" link
     Then The user should be redirected to "Traversal" page
     When The user clicks "Try here>>>" button
@@ -70,7 +70,7 @@ Feature: This feature file contain scenario for the Queue module
   Scenario: Verify linkedlist Insertion module
     Given user is on homepage
     When User clicks the Get Started button in Linked List Panel
-    Then The user Click run buttonshould be redirected to "Linked List" page
+    Then The user should be redirected to "Linked List" page
     When The user clicks "Insertion" link
     Then The user should be redirected to "Insertion" page    
     When The user clicks "Try here>>>" button
@@ -82,7 +82,7 @@ Feature: This feature file contain scenario for the Queue module
   Scenario: Verify linkedlist Deletion module
     Given user is on homepage
     When User clicks the Get Started button in Linked List Panel
-    Then The user Click run buttonshould be redirected to "Linked List" page
+    Then The user should be redirected to "Linked List" page
     When The user clicks "Deletion" link
     Then The user should be redirected to "Deletion" page
     When The user clicks "Try here>>>" button

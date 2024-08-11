@@ -75,17 +75,5 @@ public class LinkedListSteps{
 		String alertText = alert.getText();
 		System.out.println("Alert detected with text: " + alertText);
 	}
-
-	@When("The user click the ok button in the alert window")
-	public void the_user_click_the_ok_button_in_the_alert_window() {
-	}
-
-	@Then("The user is on the same page having Editor and Run button")
-	public void the_user_is_on_the_same_page_having_editor_and_run_button() {
-	}
-
-	@Then("The user Click run buttonshould be redirected to {string} page")
-	public void the_user_click_run_buttonshould_be_redirected_to_page(String string) {
-	}
 	
 }
