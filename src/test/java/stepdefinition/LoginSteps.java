@@ -40,8 +40,8 @@ public class LoginSteps {
 
 	}
 
-	@And("cicks on login button")
-	public void cicks_on_login_button() {
+	@And("clicks on login button")
+	public void clicks_on_login_button() {
 		driver.findElement(By.xpath("//input[4]")).click();
 
 	}
