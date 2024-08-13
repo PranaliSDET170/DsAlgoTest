@@ -6,7 +6,8 @@ Feature: This feature file contain scenario for the Linked List module
     When user enters username and password
     And clicks on login button
     Then user is successfully logged in
-
+	
+	@linkedlist-Introduction
   Scenario: Verify linkedlist Introduction module
     Given user is on homepage
     When User clicks the Get Started button in Linked List Panel
@@ -18,7 +19,8 @@ Feature: This feature file contain scenario for the Linked List module
     When The user writes the valid python code
     And  Click run button
     Then The user is able to see the output inside the console
- 
+ 	
+ 	@linkedlist-CreatingLinkedList
    Scenario: Verify linkedlist CreatingLinkedList module
     Given user is on homepage   
     When User clicks the Get Started button in Linked List Panel
@@ -31,6 +33,7 @@ Feature: This feature file contain scenario for the Linked List module
     And Click run button
     Then The user is able to see the output inside the console
 
+	@linkedlist-TypesofLinkedList
   Scenario: Verify linkedlist TypesofLinkedList module
     Given user is on homepage
     When User clicks the Get Started button in Linked List Panel
@@ -42,7 +45,8 @@ Feature: This feature file contain scenario for the Linked List module
     When The user writes the valid python code
     And Click run button
     Then The user is able to see the output inside the console
-    
+  
+  @linkedlist-ImplementLinkedList
   Scenario: Verify linkedlist ImplementLinkedList module
     Given user is on homepage
     When User clicks the Get Started button in Linked List Panel
@@ -55,6 +59,7 @@ Feature: This feature file contain scenario for the Linked List module
     And Click run button
     Then The user is able to see the output inside the console
  
+ 	@linkedlist-Traversal
    Scenario: Verify linkedlist Traversal module
     Given user is on homepage
     When User clicks the Get Started button in Linked List Panel
@@ -67,6 +72,7 @@ Feature: This feature file contain scenario for the Linked List module
     And Click run button
     Then The user is able to see the output inside the console   
 
+	@linkedlist-Insertion
   Scenario: Verify linkedlist Insertion module
     Given user is on homepage
     When User clicks the Get Started button in Linked List Panel
@@ -78,7 +84,8 @@ Feature: This feature file contain scenario for the Linked List module
     When The user writes the valid python code
     And Click run button
     Then The user is able to see the output inside the console
-    
+  
+  @linkedlist-Deletion
   Scenario: Verify linkedlist Deletion module
     Given user is on homepage
     When User clicks the Get Started button in Linked List Panel
@@ -90,7 +97,8 @@ Feature: This feature file contain scenario for the Linked List module
     When The user writes the valid python code
     And Click run button
     Then The user is able to see the output inside the console
-    
+  
+  @linkedlist-Introduction
   Scenario: Verify linkedlist Introduction module
     Given user is on homepage
     When User clicks the Get Started button in Linked List Panel

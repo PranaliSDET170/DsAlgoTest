@@ -7,6 +7,7 @@ Feature: This feature file contain scenario for the Stack module
     And clicks on login button
     Then user is successfully logged in
 
+	@Stack-Operations
   Scenario: Verify Stack Operations in Stack module
     Given user is on homepage
     When User clicks the Get Started button in Stack Panel
@@ -18,7 +19,8 @@ Feature: This feature file contain scenario for the Stack module
     When The user writes the valid python code
     And  Click run button
     Then The user is able to see the output inside the console
-    
+  
+  @Stack-Implementation
   Scenario: Verify Stack Implementation module
     Given user is on homepage
     When User clicks the Get Started button in Stack Panel
@@ -30,7 +32,8 @@ Feature: This feature file contain scenario for the Stack module
     When The user writes the valid python code
     And  Click run button
     Then The user is able to see the output inside the console
-    
+  
+  @Stack-Implementation
   Scenario: Verify Stack Implementation module
     Given user is on homepage
     When User clicks the Get Started button in Stack Panel
