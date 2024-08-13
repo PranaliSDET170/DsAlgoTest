@@ -83,4 +83,32 @@ public class QueueSteps {
 
 	}
 
+	@When("user clicks on Implementation using array link")
+	public void user_clicks_on_implementation_using_array_link() {
+	    driver.findElement(By.linkText("Implementation using array")).click();
+	}
+	
+	@Then("user is navigated to Implementation using array homepage")
+	public void user_is_navigated_to_implementation_using_array_homepage() {
+		Assert.assertEquals(driver.getTitle(), "Implementation using array");
+	    
+	}
+	
+	@When("user clicks on Queue Operations link")
+	public void user_clicks_on_queue_operations_link() {
+		driver.findElement(By.linkText("Queue Operations")).click();
+	    
+	}
+	
+	@Then("user is navigated to Queue Operations homepage")
+	public void user_is_navigated_to_queue_operations_homepage() {
+		Assert.assertEquals(driver.getTitle(), "Queue Operations");
+	    
+	}
+	
+	
+
+
+
+
 }
