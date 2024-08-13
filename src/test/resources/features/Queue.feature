@@ -2,12 +2,13 @@
 Feature: This feature file contain scenario for the Queue module
 
   Background: user is logged in
-    Given user is on login page
+    #Given user is on login page
+    Given user is navigated to login page using "Firefox" browser
     When user enters username and password
     And clicks on login button
     Then user is successfully logged in
 
-  @Queue
+  @QueueHome
   Scenario: verify queue module homepage
     Given user is on homepage
     When user clicks on get started button in queue module
