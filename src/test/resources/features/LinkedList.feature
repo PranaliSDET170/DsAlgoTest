@@ -1,10 +1,10 @@
-
+@LinkedList
 Feature: This feature file contain scenario for the Linked List module
 
   Background: user is logged in
     Given user is on login page
     When user enters username and password
-    And cicks on login button
+    And clicks on login button
     Then user is successfully logged in
 
   Scenario: Verify linkedlist Introduction module
