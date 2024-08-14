@@ -21,7 +21,25 @@ public class GraphSteps {
 	    
 	    
 	}
+	@Then("user clicks on Graph link")
+	public void user_clicks_on_graph_link() {
+	  
+		driver.findElement(By.linkText("Graph")).click();
+	}
+    
+	@Then("user clicks on Graph Representations link")
+	public void user_clicks_on_graph_representations_link() {
+		driver.findElement(By.linkText("Graph Representations")).click();
+	   
+	    
+	}
 
+	@Then("user is navigated to Graph Representations homepage")
+	public void user_is_navigated_to_graph_representations_homepage() {
+		Assert.assertEquals(driver.getTitle(), "Graph Representations");
+	   
+	    
+	}
 
 
 
