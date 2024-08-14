@@ -34,5 +34,16 @@ public class ArraySteps {
 		Assert.assertEquals(driver.getTitle(), "Arrays in Python");
 
 	}
+	@Then("user clicks on Arrays Using List link")
+	public void user_clicks_on_arrays_using_list_link() {
+		driver.findElement(By.linkText("Arrays Using List")).click();
+	    
+	}
+	@Then("user is navigated to Arrays Using List homepage")
+	public void user_is_navigated_to_arrays_using_list_homepage() {
+		Assert.assertEquals(driver.getTitle(), "Arrays Using List");
+	   
+	    
+	}
 
 }

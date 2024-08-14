@@ -24,3 +24,16 @@ Feature: This feature file contain scenario for the module Array
     And user writes valid python code
     And user clicks on Run button
     Then user is able to see the output in the console
+    
+     @ArraysUsingList
+  Scenario: verify Arrays Using List
+    Given user is on homepage
+    When user clicks on get started button in Array module
+    Then user is navigated to Array homepage
+    And user clicks on Arrays Using List link
+    Then user is navigated to Arrays Using List homepage
+    And user clicks on Try here button
+    And user writes valid python code
+    And user clicks on Run button
+    Then user is able to see the output in the console
+    
