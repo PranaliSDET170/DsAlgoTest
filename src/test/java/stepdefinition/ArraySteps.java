@@ -45,5 +45,17 @@ public class ArraySteps {
 	   
 	    
 	}
+	@Then("user clicks on Basic Operations in Lists link")
+	public void user_clicks_on_basic_operations_in_lists_link() {
+		driver.findElement(By.linkText("Basic Operations in Lists")).click();
+	    
+	}
+
+	@Then("user is navigated to Basic Operations in Lists homepage")
+	public void user_is_navigated_to_basic_operations_in_lists_homepage() {
+	   
+		Assert.assertEquals(driver.getTitle(), "Basic Operations in Lists");
+	}
+
 
 }
