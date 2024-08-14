@@ -48,3 +48,15 @@ Feature: This feature file contain scenario for the module Array
     And user writes valid python code
     And user clicks on Run button
     Then user is able to see the output in the console
+
+  @ApplicationsofArray
+  Scenario: verify Applications of Array
+    Given user is on homepage
+    When user clicks on get started button in Array module
+    Then user is navigated to Array homepage
+    And user clicks on Applications of Array link
+    Then user is navigated to Applications of Array homepage
+    And user clicks on Try here button
+    And user writes valid python code
+    And user clicks on Run button
+    Then user is able to see the output in the console

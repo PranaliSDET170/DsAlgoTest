@@ -56,6 +56,16 @@ public class ArraySteps {
 	   
 		Assert.assertEquals(driver.getTitle(), "Basic Operations in Lists");
 	}
+	@Then("user clicks on Applications of Array link")
+	public void user_clicks_on_applications_of_array_link() {
+	   
+		driver.findElement(By.linkText("Applications of Array")).click();
+	}
 
+	@Then("user is navigated to Applications of Array homepage")
+	public void user_is_navigated_to_applications_of_array_homepage() {
+	   
+		Assert.assertEquals(driver.getTitle(), "Applications of Array");
+	}
 
 }
