@@ -1,4 +1,4 @@
-@Queue @Smoke
+@Queue @DsAlgo
 Feature: This feature file contain scenario for the Queue module
 
   Background: user is logged in
@@ -7,14 +7,14 @@ Feature: This feature file contain scenario for the Queue module
     And clicks on login button
     Then user is successfully logged in
 
-  @Queue
+  @QueueHome
   Scenario: verify queue module homepage
     Given user is on homepage
     When user clicks on get started button in queue module
     Then user is navigated to queue homepage
 
   @ImplQueueInPython
-  Scenario: verify Implementation of Queue in Python - Try Editor
+  Scenario: verify Implementation of Queue in Python
     Given user is on homepage
     When user clicks on get started button in queue module
     And user clicks on Implementation of Queue in Python link

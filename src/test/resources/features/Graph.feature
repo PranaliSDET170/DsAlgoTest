@@ -1,4 +1,4 @@
-@Graph
+@Graph @DsAlgo
 Feature: This feature file contain scenario for the Graph module
 
   Background: user is logged in
