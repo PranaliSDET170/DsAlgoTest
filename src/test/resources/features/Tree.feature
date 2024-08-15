@@ -1,4 +1,4 @@
-@Tree
+@Tree @DsAlgo
 Feature: This feature file contain scenario for the tree module
 
   Background: user is logged in

@@ -1,4 +1,4 @@
-@DataStructures
+@DataStructures @DsAlgo
 Feature: This feature file contain scenario for the Data Structures-Introduction module
 
   Background: user is logged in
