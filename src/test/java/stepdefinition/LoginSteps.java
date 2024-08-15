@@ -14,6 +14,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utilities.ConfigPropertiesReader;
 
 public class LoginSteps {
 
@@ -24,31 +25,21 @@ public class LoginSteps {
 	}
 
 	private WebDriver createBrowserInstance() {
-		// Properties is a utility class used to load content of property file.
-		Properties prop = new Properties();
 
 		// Reference of local variable
 		WebDriver driverInstance = null;
 
-		try {
-			// load Config.properties into prop object's properties
-			prop.load(LoginSteps.class.getClassLoader().getResourceAsStream("config.properties"));
+		String browserName = ConfigPropertiesReader.getPropertyValue("browserKey");
 
-			String browserName = prop.getProperty("browserKey");
-
-			// Initialize local variable based on property
-			if (browserName.equalsIgnoreCase("Chrome")) {
-				driverInstance = new ChromeDriver();
-			} else if (browserName.equalsIgnoreCase("FireFox")) {
-				driverInstance = new FirefoxDriver();
-			} else if (browserName.equalsIgnoreCase("Safari")) {
-				driverInstance = new SafariDriver();
-			} else {
-				Assert.fail("Invalid Browser Name");
-			}
-
-		} catch (IOException e) {
-			Assert.fail("Unable to read proeprty file!!!");
+		// Initialize local variable based on property
+		if (browserName.equalsIgnoreCase("Chrome")) {
+			driverInstance = new ChromeDriver();
+		} else if (browserName.equalsIgnoreCase("FireFox")) {
+			driverInstance = new FirefoxDriver();
+		} else if (browserName.equalsIgnoreCase("Safari")) {
+			driverInstance = new SafariDriver();
+		} else {
+			Assert.fail("Invalid Browser Name");
 		}
 
 		return driverInstance;

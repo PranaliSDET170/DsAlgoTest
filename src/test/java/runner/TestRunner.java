@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 	@CucumberOptions(
 			plugin = {"pretty", "html:target/TestRusult.html"}, //to generate reports
 			monochrome=true,  //console output colour
-			tags = "@Queue or @LinkedList or @Stack or @Tree or @Array or @Graph or @DataStructures", //tags from feature file
+			tags = "@Graph or @DataStructures", //tags from feature file
 			features = {"src/test/resources/features"}, //location of feature files
 			glue= "stepdefinition") //location of step definition files
 
@@ -17,7 +17,7 @@ import io.cucumber.testng.CucumberOptions;
 	public class TestRunner extends AbstractTestNGCucumberTests{
 		
 		@Override
-	    @DataProvider(parallel = false)
+	    @DataProvider(parallel = true)
 	    public Object[][] scenarios() {
 					
 			return super.scenarios();	
