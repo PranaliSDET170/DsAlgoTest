@@ -1,9 +1,8 @@
 package stepdefinition;
 
+import java.io.IOException;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Alert;
+import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,26 +23,41 @@ public class LoginSteps {
 		return driver;
 	}
 
-	@Given("user is navigated to login page using {string} browser")
-	public void user_is_navigated_to_login_page_using_browser(String browserName) {
-		if (browserName.equals("Chrome")) {
-			driver = new ChromeDriver();
-		} else if (browserName.equals("Firefox")) {
-			driver = new FirefoxDriver();
-		} else if (browserName.equals("Safari")) {
-			driver = new SafariDriver();
+	private WebDriver createBrowserInstance() {
+		// Properties is a utility class used to load content of property file.
+		Properties prop = new Properties();
+
+		// Reference of local variable
+		WebDriver driverInstance = null;
+
+		try {
+			// load Config.properties into prop object's properties
+			prop.load(LoginSteps.class.getClassLoader().getResourceAsStream("config.properties"));
+
+			String browserName = prop.getProperty("browserKey");
+
+			// Initialize local variable based on property
+			if (browserName.equalsIgnoreCase("Chrome")) {
+				driverInstance = new ChromeDriver();
+			} else if (browserName.equalsIgnoreCase("FireFox")) {
+				driverInstance = new FirefoxDriver();
+			} else if (browserName.equalsIgnoreCase("Safari")) {
+				driverInstance = new SafariDriver();
+			} else {
+				Assert.fail("Invalid Browser Name");
+			}
+
+		} catch (IOException e) {
+			Assert.fail("Unable to read proeprty file!!!");
 		}
 
-		driver.get("https://dsportalapp.herokuapp.com/login");
-
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+		return driverInstance;
 
 	}
 
 	@Given("user is on login page")
 	public void user_is_on_login_page() {
-		driver = new ChromeDriver();
+		driver = createBrowserInstance();
 
 		driver.get("https://dsportalapp.herokuapp.com/login");
 

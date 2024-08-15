@@ -2,8 +2,7 @@
 Feature: This feature file contain scenario for the Queue module
 
   Background: user is logged in
-    #Given user is on login page
-    Given user is navigated to login page using "Firefox" browser
+    Given user is on login page
     When user enters username and password
     And clicks on login button
     Then user is successfully logged in
