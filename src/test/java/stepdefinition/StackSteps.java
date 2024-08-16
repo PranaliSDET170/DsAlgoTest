@@ -4,10 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.When;
+import utilities.DriverConfig;
 
 public class StackSteps{
-	
-	WebDriver driver = LoginSteps.getDriver();
+
+	private final WebDriver driver = DriverConfig.getDriver();
 	
 	@When("User clicks the Get Started button in Stack Panel")
 	public void user_clicks_the_get_started_button_in_stack_panel() {

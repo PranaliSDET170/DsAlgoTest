@@ -6,9 +6,10 @@ import org.testng.Assert;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utilities.DriverConfig;
 
 public class ArraySteps {
-	WebDriver driver = LoginSteps.getDriver();
+	private final WebDriver driver = DriverConfig.getDriver();
 
 	@When("user clicks on get started button in Array module")
 	public void user_clicks_on_get_started_button_in_array_module() {

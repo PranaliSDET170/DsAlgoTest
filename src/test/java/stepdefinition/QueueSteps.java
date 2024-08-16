@@ -11,13 +11,14 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utilities.DriverConfig;
 
 public class QueueSteps {
 	/*
 	 * Driver instance is required to find elements on the web page. Created static
 	 * method getDriver inside LoginSteps class to return required driver instance.
 	 */
-	WebDriver driver = LoginSteps.getDriver();
+	private final WebDriver driver = DriverConfig.getDriver();
 
 	@When("user clicks on get started button in queue module")
 	public void user_clicks_on_get_started_button_in_queue_module() {
