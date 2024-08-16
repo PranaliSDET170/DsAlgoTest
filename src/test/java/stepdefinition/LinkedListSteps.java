@@ -12,13 +12,13 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utilities.DriverConfig;
+import utilities.DriverManager;
 
 import java.time.Duration;
 
 public class LinkedListSteps{
 
-	private final WebDriver driver = DriverConfig.getDriver();
+	private final WebDriver driver = DriverManager.getDriver();
 
 	@When("User clicks the Get Started button in Linked List Panel")
 	public void user_clicks_the_get_started_button_in_linked_list_panel() {

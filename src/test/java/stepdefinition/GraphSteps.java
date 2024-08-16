@@ -6,10 +6,10 @@ import org.testng.Assert;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utilities.DriverConfig;
+import utilities.DriverManager;
 
 public class GraphSteps {
-	private final WebDriver driver = DriverConfig.getDriver();
+	private final WebDriver driver = DriverManager.getDriver();
 
 	@When("user clicks on get started button in Graph module")
 	public void user_clicks_on_get_started_button_in_graph_module() {

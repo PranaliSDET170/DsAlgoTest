@@ -6,10 +6,10 @@ import org.testng.Assert;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utilities.DriverConfig;
+import utilities.DriverManager;
 
 public class DataStructureSteps {
-	private final WebDriver driver = DriverConfig.getDriver();
+	private final WebDriver driver = DriverManager.getDriver();
 
 	@When("user clicks on get started button in Data Structures-Introduction module")
 	public void user_clicks_on_get_started_button_in_data_structures_introduction_module() {

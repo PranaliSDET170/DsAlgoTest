@@ -1,6 +1,7 @@
 package stepdefinition;
 
 import java.io.IOException;
+import java.sql.Driver;
 import java.time.Duration;
 import java.util.Properties;
 import org.openqa.selenium.By;
@@ -10,19 +11,34 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utilities.ConfigPropertiesReader;
-import utilities.DriverConfig;
+import utilities.DriverManager;
 
 public class LoginSteps {
 
-	private final WebDriver driver = DriverConfig.getDriver();
+	private WebDriver driver;
+
+	@Before
+	public void initialization() {
+		DriverManager.createDriver();
+		System.out.println("Before Scenario - Created New Driver");
+	}
+
+	@After
+	public void afterScenario() {
+		DriverManager.closeDriver();
+		System.out.println("After Scenario - Closed New Driver");
+	}
 
 	@Given("user is on login page")
 	public void user_is_on_login_page() {
+		driver = DriverManager.getDriver();
 		driver.get("https://dsportalapp.herokuapp.com/login");
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
