@@ -6,35 +6,29 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+public class WebDriverManager {
 
-public class DriverManager {
+	private final WebDriver driver;
 
-	private static WebDriver driver;
-
-	public static void createDriver() {
+	public WebDriverManager() {
 		String browserName = ConfigPropertiesReader.getPropertyValue("browserKey");
 
 		// Initialize local variable based on property
 		if (browserName.equalsIgnoreCase("Chrome")) {
-			driver = new ChromeDriver();
+			this.driver = new ChromeDriver();
 		} else if (browserName.equalsIgnoreCase("FireFox")) {
-			driver = new FirefoxDriver();
+			this.driver = new FirefoxDriver();
 		} else if (browserName.equalsIgnoreCase("Safari")) {
-			driver = new SafariDriver();
+			this.driver = new SafariDriver();
 		} else {
+			this.driver = null;
 			Assert.fail("Invalid Browser Name");
 		}
+		
+		System.out.println("New Driver Created!!!");
 	}
 
-	public synchronized static void closeDriver() {
-		System.out.println("Close Driver!!!");
-		driver.close();
-	}
-
-	public synchronized static WebDriver getDriver() {
+	public WebDriver getDriver() {
 		return driver;
 	}
-
 }

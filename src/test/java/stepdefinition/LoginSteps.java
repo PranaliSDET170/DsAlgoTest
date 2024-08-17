@@ -1,44 +1,42 @@
 package stepdefinition;
 
-import java.io.IOException;
-import java.sql.Driver;
 import java.time.Duration;
-import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.SessionId;
 import org.testng.Assert;
 
 import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utilities.ConfigPropertiesReader;
-import utilities.DriverManager;
+import utilities.WebDriverManager;
 
 public class LoginSteps {
 
 	private WebDriver driver;
 
-	@Before
-	public void initialization() {
-		DriverManager.createDriver();
-		System.out.println("Before Scenario - Created New Driver");
+	public LoginSteps(WebDriverManager driverManager) {
+		this.driver = driverManager.getDriver();
 	}
 
+	@AfterStep
+	public void afterStep() {
+		SessionId s = ((RemoteWebDriver) driver).getSessionId();
+		System.out.println("Session Id is: " + s);
+	}
+	
 	@After
 	public void afterScenario() {
-		DriverManager.closeDriver();
-		System.out.println("After Scenario - Closed New Driver");
+		driver.close();
 	}
 
 	@Given("user is on login page")
 	public void user_is_on_login_page() {
-		driver = DriverManager.getDriver();
 		driver.get("https://dsportalapp.herokuapp.com/login");
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
