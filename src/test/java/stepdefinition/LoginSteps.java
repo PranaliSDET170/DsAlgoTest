@@ -4,12 +4,8 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.SessionId;
 import org.testng.Assert;
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -22,17 +18,6 @@ public class LoginSteps {
 
 	public LoginSteps(WebDriverManager driverManager) {
 		this.driver = driverManager.getDriver();
-	}
-
-	@AfterStep
-	public void afterStep() {
-		SessionId s = ((RemoteWebDriver) driver).getSessionId();
-		System.out.println("Session Id is: " + s);
-	}
-	
-	@After
-	public void afterScenario() {
-		driver.close();
 	}
 
 	@Given("user is on login page")
