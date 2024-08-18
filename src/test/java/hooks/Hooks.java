@@ -18,12 +18,12 @@ public class Hooks {
 
 	@AfterStep
 	public void afterStep() {
-		SessionId s = ((RemoteWebDriver) driver).getSessionId();
-		System.out.println("Session Id is: " + s);
+//		System.out.println("Session Id is: " + ((RemoteWebDriver) driver).getSessionId());
 	}
 
 	@After
 	public void afterScenario() {
+		//to close browser after every scenario
 		driver.close();
 	}
 

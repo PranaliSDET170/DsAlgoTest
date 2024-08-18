@@ -10,6 +10,9 @@ public class WebDriverManager {
 
 	private final WebDriver driver;
 
+	/*
+	 * Invoked by dependency injection framework: scucumber-picocontainer
+	 */
 	public WebDriverManager() {
 		String browserName = ConfigPropertiesReader.getPropertyValue("browserKey");
 
@@ -28,6 +31,9 @@ public class WebDriverManager {
 		System.out.println("New Driver Created!!!");
 	}
 
+	/*
+	 * To return active driver instance
+	 */
 	public WebDriver getDriver() {
 		return driver;
 	}
