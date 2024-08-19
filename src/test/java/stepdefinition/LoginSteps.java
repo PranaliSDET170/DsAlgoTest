@@ -1,55 +1,27 @@
 package stepdefinition;
 
-import java.io.IOException;
 import java.time.Duration;
-import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utilities.ConfigPropertiesReader;
+import utilities.WebDriverManager;
 
 public class LoginSteps {
 
-	private static WebDriver driver;
+	private WebDriver driver;
 
-	public static WebDriver getDriver() {
-		return driver;
-	}
-
-	private WebDriver createBrowserInstance() {
-
-		// Reference of local variable
-		WebDriver driverInstance = null;
-
-		String browserName = ConfigPropertiesReader.getPropertyValue("browserKey");
-
-		// Initialize local variable based on property
-		if (browserName.equalsIgnoreCase("Chrome")) {
-			driverInstance = new ChromeDriver();
-		} else if (browserName.equalsIgnoreCase("FireFox")) {
-			driverInstance = new FirefoxDriver();
-		} else if (browserName.equalsIgnoreCase("Safari")) {
-			driverInstance = new SafariDriver();
-		} else {
-			Assert.fail("Invalid Browser Name");
-		}
-
-		return driverInstance;
-
+	public LoginSteps(WebDriverManager driverManager) {
+		this.driver = driverManager.getDriver();
 	}
 
 	@Given("user is on login page")
 	public void user_is_on_login_page() {
-		driver = createBrowserInstance();
-
 		driver.get("https://dsportalapp.herokuapp.com/login");
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

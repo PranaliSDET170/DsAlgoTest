@@ -6,10 +6,15 @@ import org.testng.Assert;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utilities.WebDriverManager;
 
 public class TreeSteps {
 
-	WebDriver driver = LoginSteps.getDriver();
+	private WebDriver driver;
+
+	public TreeSteps(WebDriverManager driverManager) {
+		this.driver = driverManager.getDriver();
+	}
 
 	@When("user clicks on get started button in tree module")
 	public void user_clicks_on_get_started_button_in_tree_module() {

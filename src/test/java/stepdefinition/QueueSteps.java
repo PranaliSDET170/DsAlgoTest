@@ -3,21 +3,23 @@ package stepdefinition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utilities.WebDriverManager;
 
 public class QueueSteps {
 	/*
 	 * Driver instance is required to find elements on the web page. Created static
 	 * method getDriver inside LoginSteps class to return required driver instance.
 	 */
-	WebDriver driver = LoginSteps.getDriver();
+	private WebDriver driver;
+
+	public QueueSteps(WebDriverManager driverManager) {
+		this.driver = driverManager.getDriver();
+	}
 
 	@When("user clicks on get started button in queue module")
 	public void user_clicks_on_get_started_button_in_queue_module() {
@@ -85,30 +87,25 @@ public class QueueSteps {
 
 	@When("user clicks on Implementation using array link")
 	public void user_clicks_on_implementation_using_array_link() {
-	    driver.findElement(By.linkText("Implementation using array")).click();
+		driver.findElement(By.linkText("Implementation using array")).click();
 	}
-	
+
 	@Then("user is navigated to Implementation using array homepage")
 	public void user_is_navigated_to_implementation_using_array_homepage() {
 		Assert.assertEquals(driver.getTitle(), "Implementation using array");
-	    
+
 	}
-	
+
 	@When("user clicks on Queue Operations link")
 	public void user_clicks_on_queue_operations_link() {
 		driver.findElement(By.linkText("Queue Operations")).click();
-	    
+
 	}
-	
+
 	@Then("user is navigated to Queue Operations homepage")
 	public void user_is_navigated_to_queue_operations_homepage() {
 		Assert.assertEquals(driver.getTitle(), "Queue Operations");
-	    
+
 	}
-	
-	
-
-
-
 
 }

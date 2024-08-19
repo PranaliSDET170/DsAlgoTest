@@ -6,9 +6,15 @@ import org.testng.Assert;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utilities.WebDriverManager;
 
 public class GraphSteps {
-	WebDriver driver = LoginSteps.getDriver();
+	private WebDriver driver;
+
+	public GraphSteps(WebDriverManager driverManager) {
+		this.driver = driverManager.getDriver();
+	}
+
 	@When("user clicks on get started button in Graph module")
 	public void user_clicks_on_get_started_button_in_graph_module() {
 		driver.findElement(By.xpath("//a[@href='graph']")).click();
