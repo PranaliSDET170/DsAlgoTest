@@ -1,15 +1,17 @@
 package stepdefinition;
 
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
+import com.aventstack.extentreports.Status;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utilities.ExtentManager;
 import utilities.WebDriverManager;
 
 public class LoginSteps {
@@ -26,6 +28,8 @@ public class LoginSteps {
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+		
+		ExtentManager.getTest().log(Status.INFO, "Navigated to login page");
 
 	}
 
