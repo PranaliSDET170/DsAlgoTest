@@ -21,6 +21,12 @@
       <class name="crossbrowser.crossbrowserTest"/>
     </classes>
   <//test> <!-- Test -->
+  <suite name="Suite">
+  <test thread-count="2" parallel="methods">
+	<test name="Test">
+    <classes>
+      <class name="parallel.ParallelClass01 "/>
+    </classes>
   
   
   </suite> <!-- Suite -->  

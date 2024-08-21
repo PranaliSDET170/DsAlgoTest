@@ -4,6 +4,11 @@ import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 
@@ -11,10 +16,12 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.CodeLanguage;
+import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReport2 {
+	
 	private static ExtentReports extentReports2;
 
 	public static void main(String[] args) throws IOException, URISyntaxException {
@@ -72,11 +79,34 @@ public class ExtentReport2 {
 	    .createTest("XML based Test")
 	    .info(MarkupHelper.createCodeBlock(xmlData, CodeLanguage.XML));
 	    
-	    
-		extentReports
+	    extentReports
 	    .createTest("JSON based Test") 
-	    .info(MarkupHelper.createCodeBlock(jsonData, CodeLanguage.JSON));
+	    .log(Status.INFO, MarkupHelper.createCodeBlock(jsonData, CodeLanguage.JSON));
+		
+		List<String> listData = new ArrayList<>();
+		listData.add("Nandita");
+		listData.add("Walke");
+		
+		Map<Integer, String> mapData = new HashMap<>();
+		mapData.put(101, "Nandita");
+		mapData.put(102, "Walke");
+		
+		Set<Integer> setData = mapData.keySet();
+		
+	    extentReports
+	   .createTest("List based Test")
+      .info(MarkupHelper.createOrderedList(listData));
 	   
+	   extentReports
+	   .createTest("Set based Test")
+       .info(MarkupHelper.createOrderedList(setData));
+	   
+	     
+	   
+	   extentReports
+	   .createTest("Map based Test")
+       .info(MarkupHelper.createOrderedList(mapData));
+	  
 	    	       
 	    extentReports.flush();
 		Desktop.getDesktop().browse(new File("Extentreport.html").toURI());
@@ -88,6 +118,16 @@ public class ExtentReport2 {
 			
 
 }
+
+	private static void file(Markup unorderedList) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void info(Markup orderedList) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	private static Object CodeLanguage(String xmlData, CodeLanguage xml) {
 		// TODO Auto-generated method stub
