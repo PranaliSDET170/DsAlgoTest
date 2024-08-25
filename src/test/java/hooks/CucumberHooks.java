@@ -21,8 +21,18 @@ public class CucumberHooks {
 
 	@After
 	public void afterScenario(Scenario scenario) {
+
+		driver.close();
+	}
+
+	/*@AfterAll
+	public static void after_all() {
+		ExtentManager.getExtentReportsInstance().flush();
+	}
+
+	private void generateExtendReport(Scenario scenario) {
 		ExtentTest extentTest = ExtentManager.getExtentReportsInstance().createTest(scenario.getName());
-		
+
 		if (scenario.isFailed()) {
 			extentTest.createNode("Node").pass(Status.FAIL.getName());
 			extentTest.log(Status.FAIL, "Scenario failed: " + scenario.getName());
@@ -30,12 +40,6 @@ public class CucumberHooks {
 			extentTest.createNode("Node").pass(Status.PASS.getName());
 			extentTest.log(Status.PASS, "Scenario passed: " + scenario.getName());
 		}
-		driver.close();
 	}
-
-	@AfterAll
-	public static void after_all() {
-		ExtentManager.getExtentReportsInstance().flush();
-	}
-
+*/
 }

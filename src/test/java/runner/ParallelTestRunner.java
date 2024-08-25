@@ -7,7 +7,8 @@ import io.cucumber.testng.CucumberOptions;
 //@RunWith(Cucumber.class) //Junit execution
 
 	@CucumberOptions(
-			plugin = {"pretty", "html:target/TestRusult.html"}, //to generate reports
+			plugin = {"pretty", "html:target/CucumberReport/TestRusult.html", 
+					"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}, //to generate reports
 			monochrome=true,  //console output colour
 			tags = "@DsAlgo", //tags from feature file
 			features = {"src/test/resources/features"}, //location of feature files
