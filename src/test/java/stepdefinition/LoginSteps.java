@@ -29,8 +29,6 @@ public class LoginSteps {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 		
-		ExtentManager.getTest().log(Status.INFO, "Navigated to login page");
-
 	}
 
 	@When("user enters username and password")
