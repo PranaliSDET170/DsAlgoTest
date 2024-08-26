@@ -18,7 +18,7 @@ import io.cucumber.testng.CucumberOptions;
 		features = { "src/test/resources/features" }, // location of feature files
 		glue = { "stepdefinition", "hooks" }) // location of step definition files
 
-public class ParallelTestRunner extends AbstractTestNGCucumberTests {
+public class TestParallelRunner extends AbstractTestNGCucumberTests {
 
 	@Override
 	@DataProvider(parallel = true)
