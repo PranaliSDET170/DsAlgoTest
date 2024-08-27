@@ -89,11 +89,8 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.3.1</version>
 				<configuration>
-					<excludes>
-						<exclude>TestRunner.java</exclude>
-					</excludes>
 					<includes>
-						<include>TestParallelRunner.java</include>
+						<include>TestRunner.java</include>
 					</includes>
 				</configuration>
 			</plugin>
