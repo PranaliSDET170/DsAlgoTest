@@ -17,10 +17,11 @@ Feature: This feature file contain scenario for the Queue module
   Scenario: verify Implementation of Queue in Python
     Given user is on homepage
     When user clicks on get started button in queue module
-    And user clicks on Implementation of Queue in Python link
-    Then user is navigated to Implementation of Queue in Python homepage
+    And user is navigated to queue homepage
+    And user clicks on Queues "Implementation of Queue in Python" link
+    Then user is navigated to Queues "Implementation of Queue in Python" homepage
     And user clicks on Try here button
-    And user writes valid python code
+    And user writes python code "print \"Hello\""
     And user clicks on Run button
     Then user is able to see the output in the console
 #
