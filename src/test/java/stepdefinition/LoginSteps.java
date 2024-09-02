@@ -1,60 +1,33 @@
 package stepdefinition;
 
-import java.time.Duration;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-
-import com.aventstack.extentreports.Status;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utilities.ExtentManager;
+import pageobjects.LoginPage;
 import utilities.WebDriverManager;
 
 public class LoginSteps {
 
-	private WebDriver driver;
+	private LoginPage loginPage;
 
 	public LoginSteps(WebDriverManager driverManager) {
-		this.driver = driverManager.getDriver();
+		this.loginPage = new LoginPage(driverManager.getDriver());
 	}
 
 	@Given("user is on login page")
 	public void user_is_on_login_page() {
-		driver.get("https://dsportalapp.herokuapp.com/login");
-
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-		
+		this.loginPage.openLoginPage();
 	}
 
 	@When("user enters username and password")
 	public void user_enters_username_and_password() {
-
-		driver.findElement(By.id("id_username")).sendKeys("ArinSwalke");
-		driver.findElement(By.id("id_password")).sendKeys("Nandita@09");
-
+		loginPage.enterUserName("ArinSwalke");
+		loginPage.enterPassword("Nandita@09");
 	}
 
 	@And("clicks on login button")
 	public void clicks_on_login_button() {
-		driver.findElement(By.xpath("//input[4]")).click();
-
-	}
-
-	@Then("user is successfully logged in")
-	public void user_is_successfully_logged_in() {
-		Assert.assertEquals(driver.findElement(By.className("alert")).getText(), "You are logged in");
-	}
-
-	@Given("user is on homepage")
-	public void user_is_on_homepage() {
-		// Assert.assertEquals(<ActualValueReturnedByDriver>, <ExpectedValue>);
-		Assert.assertEquals(driver.getTitle(), "NumpyNinja");
-
+		loginPage.clickLogin();
 	}
 
 }
