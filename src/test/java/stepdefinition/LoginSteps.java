@@ -45,7 +45,6 @@ public class LoginSteps {
 	public void user_crdentials_are_read_from_sheet_user_credentials_at_row_number(String sheetName, Integer rowNum) {
 		ExcelReader excelReader = new ExcelReader(sheetName);
 		Map<String, String> excelRow = excelReader.getData(rowNum);
-		System.out.println(excelRow);
 		this.userName = excelRow.get("username");
 		this.password = excelRow.get("password");
 		this.expectedMessage = excelRow.get("expectedmessage");

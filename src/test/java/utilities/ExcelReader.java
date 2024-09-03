@@ -61,8 +61,6 @@ public class ExcelReader {
 			rows.put(rowCount++, columns);
 		}
 
-		System.out.println(rows);
-
 	}
 
 	public Map<String, String> getData(int rowNum) {
