@@ -1,4 +1,4 @@
-package DsAlgoPageObjectModel;
+package pageobjects;
 
 import java.time.Duration;
 
