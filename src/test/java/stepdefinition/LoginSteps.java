@@ -1,61 +1,58 @@
 package stepdefinition;
 
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
+import java.util.Map;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageobjects.LoginPage;
+import utilities.ExcelReader;
+import utilities.WebDriverManager;
 
 public class LoginSteps {
 
-	private static final WebDriver driver = new ChromeDriver();
-	
-	public static WebDriver getDriver() {
-		return driver;
+	private LoginPage loginPage;
+
+	private String userName;
+	private String password;
+	private String expectedMessage;
+
+	public LoginSteps(WebDriverManager driverManager) {
+		this.loginPage = new LoginPage(driverManager.getDriver());
 	}
 
 	@Given("user is on login page")
 	public void user_is_on_login_page() {
-
-		driver.get("https://dsportalapp.herokuapp.com/login");
-
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-
+		this.loginPage.openLoginPage();
+		this.userName = "ArinSwalke";
+		this.password = "Nandita@09";
+		this.expectedMessage = "You are logged in";
 	}
 
 	@When("user enters username and password")
 	public void user_enters_username_and_password() {
-
-		driver.findElement(By.id("id_username")).sendKeys("ArinSwalke");
-		driver.findElement(By.id("id_password")).sendKeys("Nandita@09");
-
+		loginPage.enterUserName(this.userName);
+		loginPage.enterPassword(this.password);
 	}
 
 	@And("clicks on login button")
 	public void clicks_on_login_button() {
-		driver.findElement(By.xpath("//input[4]")).click();
-
+		loginPage.clickLogin();
 	}
-	
-	@Then("user is successfully logged in")
-	public void user_is_successfully_logged_in() {
-		Assert.assertEquals(driver.findElement(By.className("alert")).getText(), "You are logged in");
-	}
-	
-	@Given("user is on homepage")
-	public void user_is_on_homepage() {
-		//Assert.assertEquals(<ActualValueReturnedByDriver>, <ExpectedValue>);
-		Assert.assertEquals(driver.getTitle(), "NumpyNinja");
 
+	@Given("User crdentials are read from Sheet {string} at RowNumber {int}")
+	public void user_crdentials_are_read_from_sheet_user_credentials_at_row_number(String sheetName, Integer rowNum) {
+		ExcelReader excelReader = new ExcelReader(sheetName);
+		Map<String, String> excelRow = excelReader.getData(rowNum);
+		this.userName = excelRow.get("username");
+		this.password = excelRow.get("password");
+		this.expectedMessage = excelRow.get("expectedmessage");
+	}
+
+	@Then("Verify alert message for login action")
+	public void verify_alert_message_for_login_action() {
+		loginPage.verifyAlertMessage(expectedMessage);
 	}
 
 }

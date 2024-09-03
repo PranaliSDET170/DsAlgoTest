@@ -1,11 +1,12 @@
 package utilities;
+
 import java.io.IOException;
 import java.util.Properties;
 
 import org.testng.Assert;
 
-
 public class ConfigPropertiesReader {
+
 	public static String getPropertyValue(String key) {
 		String value = null;
 		try {

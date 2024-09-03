@@ -1,32 +1,23 @@
 package utilities;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentManager {
 	private static ExtentReports extent;
-    private static ExtentSparkReporter htmlReporter;
-    private static ExtentTest test;
-	
-	
-	 public static ExtentReports getInstance() {
-	        if (extent == null) {
-	            htmlReporter = new ExtentSparkReporter("extent-report.html");
-	            extent = new ExtentReports();
-	            extent.attachReporter(htmlReporter);
-	        }
-	        return extent;
-	    }
-	    
-	public static ExtentTest createTest(String testName) {
-	        test = extent.createTest(testName);
-	        return test;
-	    }
-	    
-	    public static ExtentTest getTest() {
-	        return test;
-	    }
+	private static final String REPORT_LOCATION = "target/extent-report.html";
+
+	/**
+	 * Create ExtentReports and attach one or many reporter(s) reports.
+	 */
+	public static ExtentReports getExtentReportsInstance() {
+		if (extent == null) {
+			extent = new ExtentReports();
+			ExtentSparkReporter htmlReporter = new ExtentSparkReporter(REPORT_LOCATION);
+			extent.attachReporter(htmlReporter);
+		}
+
+		return extent;
 	}
 
-
+}

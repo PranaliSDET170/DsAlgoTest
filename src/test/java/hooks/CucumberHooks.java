@@ -1,48 +1,47 @@
-package hooks;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.SessionId;
 
+package hooks;
+
+import org.openqa.selenium.WebDriver;
+
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Scenario;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.ExtentManager;
-
+import utilities.WebDriverManager;
 
 public class CucumberHooks {
-	private WebDriverManager driver;
+
+	private WebDriver driver;
 
 	public CucumberHooks(WebDriverManager driverManager) {
-		this.driver = WebDriverManager.chromedriver();
+		this.driver = driverManager.getDriver();
 	}
 
-	@AfterStep
-	public void afterStep() {
-//		System.out.println("Session Id is: " + ((RemoteWebDriver) driver).getSessionId());
+	@After
+	public void afterScenario(Scenario scenario) {
+		
+		driver.close();
 	}
 
-	@Before
-    public void beforeScenario(Scenario scenario) {
-		ExtentManager.getInstance();
-        ExtentManager.createTest(scenario.getName());
-    }
+	/*@AfterAll
+	public static void after_all() {
+		ExtentManager.getExtentReportsInstance().flush();
+	}
 
-    @After
-    public void afterScenario(Scenario scenario) {
-    	((WebDriver) driver).close();
-    	
-        if (scenario.isFailed()) {
-            ExtentManager.getTest().log(Status.FAIL, "Scenario failed");
-        } else {
-            ExtentManager.getTest().log(Status.PASS, "Scenario passed");
-        }
-        ExtentManager.getInstance().flush();
-    }
+	private void generateExtendReport(Scenario scenario) {
+		ExtentTest extentTest = ExtentManager.getExtentReportsInstance().createTest(scenario.getName());
 
+		if (scenario.isFailed()) {
+			extentTest.createNode("Node").pass(Status.FAIL.getName());
+			extentTest.log(Status.FAIL, "Scenario failed: " + scenario.getName());
+		} else {
+			extentTest.createNode("Node").pass(Status.PASS.getName());
+			extentTest.log(Status.PASS, "Scenario passed: " + scenario.getName());
+		}
+	}
+*/
 }
-
 

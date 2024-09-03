@@ -3,9 +3,6 @@ package runner;
 import org.testng.annotations.DataProvider;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-
 
 //@RunWith(Cucumber.class) //Junit execution
 
@@ -21,13 +18,12 @@ import io.cucumber.junit.Cucumber;
 		features = { "src/test/resources/features" }, // location of feature files
 		glue = { "stepdefinition", "hooks" }) // location of step definition files
 
-	public class TestRunner extends AbstractTestNGCucumberTests{
-		
-		@Override
-	    @DataProvider(parallel = false)
-	    public Object[][] scenarios() {
-			return super.scenarios();	
-	    }
+public class TestParallelRunner extends AbstractTestNGCucumberTests {
 
-	
+	@Override
+	@DataProvider(parallel = true)
+	public Object[][] scenarios() {
+		return super.scenarios();
+	}
+
 }

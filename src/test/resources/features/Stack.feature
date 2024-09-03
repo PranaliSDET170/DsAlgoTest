@@ -1,4 +1,4 @@
-@Stack
+@Stack @DsAlgo
 Feature: This feature file contain scenario for the Stack module
 
   Background: user is logged in

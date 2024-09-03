@@ -4,19 +4,19 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-import io.cucumber.java.After;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import java.time.Duration;
+import utilities.WebDriverManager;
 
-public class LinkedListSteps{
-	
-	WebDriver driver = LoginSteps.getDriver();
+public class LinkedListSteps {
+
+	private WebDriver driver;
+
+	public LinkedListSteps(WebDriverManager driverManager) {
+		this.driver = driverManager.getDriver();
+	}
 
 	@When("User clicks the Get Started button in Linked List Panel")
 	public void user_clicks_the_get_started_button_in_linked_list_panel() {
@@ -73,7 +73,5 @@ public class LinkedListSteps{
 		String alertText = alert.getText();
 		System.out.println("Alert detected with text: " + alertText);
 	}
-	
 
-	
 }

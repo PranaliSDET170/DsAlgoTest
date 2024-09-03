@@ -1,4 +1,4 @@
-@Array
+@Array @DsAlgo
 Feature: This feature file contain scenario for the module Array
 
   Background: user is logged in

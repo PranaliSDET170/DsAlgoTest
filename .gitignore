@@ -27,3 +27,23 @@ hs_err_pid*
 replay_pid*
 /target/
 test-output/
+/.DS_Store
+allure-results
+out
+
+#Eclipse files
+*.settings
+*.classpath
+*.project
+*.pydevproject
+
+#Mac OS stuff
+.DS_Store
+
+#IDEA Files
+.idea/*
+!.idea/vcs.xml
+!.idea/icon.png
+*.iml
+*.ipr
+/.idea/

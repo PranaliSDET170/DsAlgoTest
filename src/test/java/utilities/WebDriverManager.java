@@ -1,4 +1,7 @@
 package utilities;
+
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -6,6 +9,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 
 public class WebDriverManager {
+
 	private final WebDriver driver;
 
 	/*
@@ -26,6 +30,8 @@ public class WebDriverManager {
 			Assert.fail("Invalid Browser Name");
 		}
 		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 		System.out.println("New Driver Created!!!");
 	}
 
@@ -35,6 +41,4 @@ public class WebDriverManager {
 	public WebDriver getDriver() {
 		return driver;
 	}
-
-
 }

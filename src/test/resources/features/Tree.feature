@@ -1,4 +1,4 @@
-@Tree
+@Tree @DsAlgo
 Feature: This feature file contain scenario for the tree module
 
   Background: user is logged in
@@ -17,8 +17,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Overview of Trees
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Overview of Trees link
-    Then user is on Overview of Trees homepage
+    And user clicks on Trees "Overview of Trees" link
+    Then user is on Trees "Overview of Trees" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
@@ -28,8 +28,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Terminologies
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Terminologies link
-    Then user is on Terminologies homepage
+    And user clicks on Trees "Terminologies" link
+    Then user is on Trees "Terminologies" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
@@ -39,8 +39,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Types of Trees
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Types of Trees link
-    Then user is on Types of Trees homepage
+    And user clicks on Trees "Types of Trees" link
+    Then user is on Trees "Types of Trees" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
@@ -50,8 +50,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Types of Trees
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Tree Traversals link
-    Then user is on Tree Traversals homepage
+    And user clicks on Trees "Tree Traversals" link
+    Then user is on Trees "Tree Traversals" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
@@ -61,8 +61,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Traversals-Illustration
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Traversals-Illustration link
-    Then user is on Traversals-Illustration homepage
+    And user clicks on Trees "Traversals-Illustration" link
+    Then user is on Trees "Traversals-Illustration" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
@@ -72,8 +72,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Binary Trees
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Binary Trees link
-    Then user is on Binary Trees homepage
+    And user clicks on Trees "Binary Trees" link
+    Then user is on Trees "Binary Trees" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
@@ -83,8 +83,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Types of Binary Trees
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Types of Binary Trees link
-    Then user is on Types of Binary Trees homepage
+    And user clicks on Trees "Types of Binary Trees" link
+    Then user is on Trees "Types of Binary Trees" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
@@ -94,8 +94,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Implementation in Python
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Implementation in Python link
-    Then user is on Implementation in Python homepage
+    And user clicks on Trees "Implementation in Python" link
+    Then user is on Trees "Implementation in Python" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
@@ -105,8 +105,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Binary Tree Traversals
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Binary Tree Traversals link
-    Then user is on Binary Tree Traversals homepage
+    And user clicks on Trees "Binary Tree Traversals" link
+    Then user is on Trees "Binary Tree Traversals" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
@@ -116,8 +116,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Implementation of Binary Trees
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Implementation of Binary Trees link
-    Then user is on Implementation of Binary Trees homepage
+    And user clicks on Trees "Implementation of Binary Trees" link
+    Then user is on Trees "Implementation of Binary Trees" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
@@ -127,8 +127,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Applications of Binary trees
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Applications of Binary trees link
-    Then user is on Applications of Binary trees homepage
+    And user clicks on Trees "Applications of Binary trees" link
+    Then user is on Trees "Applications of Binary trees" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
@@ -138,8 +138,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Binary Search Trees
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Binary Search Trees link
-    Then user is on Binary Search Trees homepage
+    And user clicks on Trees "Binary Search Trees" link
+    Then user is on Trees "Binary Search Trees" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
@@ -149,8 +149,8 @@ Feature: This feature file contain scenario for the tree module
   Scenario: verify Implementation Of BST
     Given user is on homepage
     When user clicks on get started button in tree module
-    And user clicks on Implementation Of BST link
-    Then user is on Implementation Of BST homepage
+    And user clicks on Trees "Implementation Of BST" link
+    Then user is on Trees "Implementation Of BST" homepage
     And user clicks on Try here button
     And user writes valid python code
     And user clicks on Run button
