@@ -34,11 +34,12 @@ public class DataStructIntroPage {
 		   	String script = "var editor = document.querySelector('.CodeMirror').CodeMirror; editor.setValue(arguments[0]);";
 		   	JavascriptExecutor js = (JavascriptExecutor) driver;
 		   	js.executeScript(script, "print \"Hello\"");
+		   	System.out.println("Hello");
 		    	  
-		    	
+		   			    	
 
 		}
 
-		}
+}
 
 
