@@ -9,93 +9,86 @@ Feature: This feature file contain scenario for the Linked List module
 
   Scenario: Verify linkedlist Introduction module
     Given user is on homepage
-    When User clicks the Get Started button in Linked List Panel
-    Then The user should be redirected to "Linked List" page    
-    When The user clicks "Introduction" link
-    Then The user should be redirected to "Introduction" page    
-    When The user clicks "Try here>>>" button
-    Then The user should be redirected to a page having Editor and run button    
-    When The user writes the valid python code
-    And  Click run button
-    Then The user is able to see the output inside the console
+    When user clicks the Get Started button in linkedlist module
+    Then user should be redirected to linkedlist page
+    When user clicks "Introduction" link
+    Then user should be redirected to "Introduction" page    
+    And user clicks on Try here button
+    And user writes valid python code
+    And user clicks on Run button
+    Then user is able to see the output in the console
  
    Scenario: Verify linkedlist CreatingLinkedList module
-    Given user is on homepage   
-    When User clicks the Get Started button in Linked List Panel
-    Then The user should be redirected to "Linked List" page 
-    When The user clicks "Creating Linked LIst" link
-    Then The user should be redirected to "Creating Linked LIst" page
-    When The user clicks "Try here>>>" button
-    Then The user should be redirected to a page having Editor and run button
-    When The user writes the valid python code
-    And Click run button
-    Then The user is able to see the output inside the console
+    Given user is on homepage
+    When user clicks the Get Started button in linkedlist module
+    Then user should be redirected to linkedlist page
+    When user clicks "Creating Linked LIst" link
+    Then user should be redirected to "Creating Linked LIst" page
+    And user clicks on Try here button
+    And user writes valid python code
+    And user clicks on Run button
+    Then user is able to see the output in the console
 
   Scenario: Verify linkedlist TypesofLinkedList module
     Given user is on homepage
-    When User clicks the Get Started button in Linked List Panel
-    Then The user should be redirected to "Linked List" page
-    When The user clicks "Types of Linked List" link
-    Then The user should be redirected to "Types of Linked List" page
-    When The user clicks "Try here>>>" button
-    Then The user should be redirected to a page having Editor and run button
-    When The user writes the valid python code
-    And Click run button
-    Then The user is able to see the output inside the console
+    When user clicks the Get Started button in linkedlist module
+    Then user should be redirected to linkedlist page
+    When user clicks "Types of Linked List" link
+    Then user should be redirected to "Types of Linked List" page
+    And user clicks on Try here button
+    And user writes valid python code
+    And user clicks on Run button
+    Then user is able to see the output in the console
     
   Scenario: Verify linkedlist ImplementLinkedList module
     Given user is on homepage
-    When User clicks the Get Started button in Linked List Panel
-    Then The user should be redirected to "Linked List" page
-    When The user clicks "Implement Linked List in Python" link
-    Then The user should be redirected to "Implement Linked List in Python" page
-    When The user clicks "Try here>>>" button
-    Then The user should be redirected to a page having Editor and run button
-    When The user writes the valid python code
-    And Click run button
-    Then The user is able to see the output inside the console
+    When user clicks the Get Started button in linkedlist module
+    Then user should be redirected to linkedlist page
+    When user clicks "Implement Linked List in Python" link
+    Then user should be redirected to "Implement Linked List in Python" page
+    And user clicks on Try here button
+    And user writes valid python code
+    And user clicks on Run button
+    Then user is able to see the output in the console
  
    Scenario: Verify linkedlist Traversal module
     Given user is on homepage
-    When User clicks the Get Started button in Linked List Panel
-    Then The user should be redirected to "Linked List" page
-    When The user clicks "Traversal" link
-    Then The user should be redirected to "Traversal" page
-    When The user clicks "Try here>>>" button
-    Then The user should be redirected to a page having Editor and run button
-    When The user writes the valid python code
-    And Click run button
-    Then The user is able to see the output inside the console   
+    When user clicks the Get Started button in linkedlist module
+    Then user should be redirected to linkedlist page
+    When user clicks "Traversal" link
+    Then user should be redirected to "Traversal" page
+    And user clicks on Try here button
+    And user writes valid python code
+    And user clicks on Run button
+    Then user is able to see the output in the console  
 
   Scenario: Verify linkedlist Insertion module
     Given user is on homepage
-    When User clicks the Get Started button in Linked List Panel
-    Then The user should be redirected to "Linked List" page
-    When The user clicks "Insertion" link
-    Then The user should be redirected to "Insertion" page    
-    When The user clicks "Try here>>>" button
-    Then The user should be redirected to a page having Editor and run button
-    When The user writes the valid python code
-    And Click run button
-    Then The user is able to see the output inside the console
+    When user clicks the Get Started button in linkedlist module
+    Then user should be redirected to linkedlist page
+    When user clicks "Insertion" link
+    Then user should be redirected to "Insertion" page    
+    And user clicks on Try here button
+    And user writes valid python code
+    And user clicks on Run button
+    Then user is able to see the output in the console
     
   Scenario: Verify linkedlist Deletion module
     Given user is on homepage
-    When User clicks the Get Started button in Linked List Panel
-    Then The user should be redirected to "Linked List" page
-    When The user clicks "Deletion" link
-    Then The user should be redirected to "Deletion" page
-    When The user clicks "Try here>>>" button
-    Then The user should be redirected to a page having Editor and run button
-    When The user writes the valid python code
-    And Click run button
-    Then The user is able to see the output inside the console
+    When user clicks the Get Started button in linkedlist module
+    Then user should be redirected to linkedlist page
+    When user clicks "Deletion" link
+    Then user should be redirected to "Deletion" page
+    And user clicks on Try here button
+    And user writes valid python code
+    And user clicks on Run button
+    Then user is able to see the output in the console
     
   Scenario: Verify linkedlist Introduction module
     Given user is on homepage
-    When User clicks the Get Started button in Linked List Panel
-    Then The user should be redirected to "Linked List" page    
-    When The user clicks "Introduction" link
-    Then The user should be redirected to "Introduction" page
-    When The user clicks "Practice Questions" link
-    Then The user should be redirected to "Practice Questions" page
+    When user clicks the Get Started button in linkedlist module
+    Then user should be redirected to linkedlist page   
+    When user clicks "Introduction" link
+    Then user should be redirected to "Introduction" page
+    When user clicks "Practice Questions" link
+    Then user should be redirected to "Practice Questions" page

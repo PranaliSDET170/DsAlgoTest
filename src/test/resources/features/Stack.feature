@@ -9,36 +9,33 @@ Feature: This feature file contain scenario for the Stack module
 
   Scenario: Verify Stack Operations in Stack module
     Given user is on homepage
-    When User clicks the Get Started button in Stack Panel
-    Then The user should be redirected to "Stack" page    
+    When user clicks the Get Started button in stack module
+    Then user should be redirected to stack page  
     When The user clicks "Operations in Stack" link
     Then The user should be redirected to "Operations in Stack" page    
-    When The user clicks "Try here>>>" button
-    Then The user should be redirected to a page having Editor and run button    
-    When The user writes the valid python code
-    And  Click run button
-    Then The user is able to see the output inside the console
+    And user clicks on Try here button
+    And user writes valid python code
+    And user clicks on Run button
+    Then user is able to see the output in the console
     
   Scenario: Verify Stack Implementation module
     Given user is on homepage
-    When User clicks the Get Started button in Stack Panel
-    Then The user should be redirected to "Stack" page    
+    When user clicks the Get Started button in stack module
+    Then user should be redirected to stack page     
     When The user clicks "Implementation" link
     Then The user should be redirected to "Implementation" page    
-    When The user clicks "Try here>>>" button
-    Then The user should be redirected to a page having Editor and run button    
-    When The user writes the valid python code
-    And  Click run button
-    Then The user is able to see the output inside the console
+    And user clicks on Try here button
+    And user writes valid python code
+    And user clicks on Run button
+    Then user is able to see the output in the console
     
   Scenario: Verify Stack Implementation module
     Given user is on homepage
-    When User clicks the Get Started button in Stack Panel
-    Then The user should be redirected to "Stack" page    
+    When user clicks the Get Started button in stack module
+    Then user should be redirected to stack page   
     When The user clicks "Applications" link
     Then The user should be redirected to "Applications" page    
-    When The user clicks "Try here>>>" button
-    Then The user should be redirected to a page having Editor and run button    
-    When The user writes the valid python code
-    And  Click run button
-    Then The user is able to see the output inside the console
+    And user clicks on Try here button
+    And user writes valid python code
+    And user clicks on Run button
+    Then user is able to see the output in the console

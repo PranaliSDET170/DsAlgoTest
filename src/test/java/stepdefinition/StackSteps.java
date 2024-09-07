@@ -1,22 +1,35 @@
 package stepdefinition;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageobjects.StackPage;
 import utilities.WebDriverManager;
 
-public class StackSteps{
-
-	private WebDriver driver;
+public class StackSteps {
+	
+	private StackPage stackpage;
 
 	public StackSteps(WebDriverManager driverManager) {
-		this.driver = driverManager.getDriver();
+		this.stackpage = new StackPage(driverManager.getDriver());
 	}
 	
-	@When("User clicks the Get Started button in Stack Panel")
-	public void user_clicks_the_get_started_button_in_stack_panel() {
-		driver.findElement(By.xpath("//a[@href='stack']")).click();
+	@When("user clicks the Get Started button in stack module")
+	public void user_clicks_the_get_started_button_in_stack_module() {
+		stackpage.clickGetStartedButton();
 	}
 
+	@Then("user should be redirected to stack page")
+	public void user_should_be_redirected_to_stack_page() {
+		stackpage.verifyUserIsOnStackHomePage();
+	}
+
+	@When("The user clicks {string} link")
+	public void the_user_clicks_link(String string) {
+		stackpage.clickLinkByText(string);
+	}
+
+	@Then("The user should be redirected to {string} page")
+	public void the_user_should_be_redirected_to_page(String string) {
+		stackpage.verifyUserIsNavigatedToPage(string);
+	}
 }
